@@ -35,25 +35,31 @@ class Stopwatch extends Component {
 
   render() {
     const { timerTime } = this.state;
-    let centiseconds = ("0" + (Math.floor(timerTime / 10) % 100)).slice(-2);
+    let ms = ("0" + (timerTime % 1000)).slice(-3);
+    // let centiseconds = ("0" + (Math.floor(timerTime / 10) % 100)).slice(-2);
     let seconds = ("0" + (Math.floor(timerTime / 1000) % 60)).slice(-2);
     let minutes = ("0" + (Math.floor(timerTime / 60000) % 60)).slice(-2);
-    let hours = ("0" + Math.floor(timerTime / 3600000)).slice(-2);
+    // let hours = ("0" + Math.floor(timerTime / 3600000)).slice(-2);
     return (
       <div className="Stopwatch">
-        <div className="Stopwatch-header">Stopwatch</div>
-        <div className="Stopwatch-display">
-          {hours} : {minutes} : {seconds} : {centiseconds}
+        <div className="Stopwatch-header">10 Second Challenge</div>
+        <div className="Stopwatch-description">
+          can you count 10 seconds in your head?
         </div>
+        {this.state.timerOn === false && (
+          <div className="Stopwatch-display">
+            {seconds} : {ms}
+          </div>
+        )}
         {this.state.timerOn === false && this.state.timerTime === 0 && (
           <button onClick={this.startTimer}>Start</button>
         )}
         {this.state.timerOn === true && (
           <button onClick={this.stopTimer}>Stop</button>
         )}
-        {this.state.timerOn === false && this.state.timerTime > 0 && (
+        {/* {this.state.timerOn === false && this.state.timerTime > 0 && (
           <button onClick={this.startTimer}>Resume</button>
-        )}
+        )} */}
         {this.state.timerOn === false && this.state.timerTime > 0 && (
           <button onClick={this.resetTimer}>Reset</button>
         )}
