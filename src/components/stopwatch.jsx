@@ -51,6 +51,9 @@ class Stopwatch extends Component {
             {seconds} : {ms}
           </div>
         )}
+        {this.state.timerOn === true && (
+          <div className="Stopwatch-displayPlaceholder"></div>
+        )}
         {this.state.timerOn === false && this.state.timerTime === 0 && (
           <button onClick={this.startTimer}>Start</button>
         )}
