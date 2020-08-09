@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import NavBar from "./components/navbar";
 // import Counters from "./components/counters";
 import Stopwatch from "./components/stopwatch";
+import { Helmet } from "react-helmet";
 
 class App extends Component {
   // state = {
@@ -48,19 +49,24 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Stopwatch />
-        {/* <main className="container">
-          <Counters
-            counters={this.state.counters}
-            onReset={this.handleReset}
-            onIncrement={this.handleIncrement}
-            onDecrement={this.handleDecrement}
-            onDelete={this.handleDelete}
-            onRestart={this.handleRestart}
-          />
-        </main> */}
-      </div>
+      <>
+        <Helmet>
+          <title>10 Second Challenge</title>
+        </Helmet>
+        <div>
+          <Stopwatch />
+          {/* <main className="container">
+            <Counters
+              counters={this.state.counters}
+              onReset={this.handleReset}
+              onIncrement={this.handleIncrement}
+              onDecrement={this.handleDecrement}
+              onDelete={this.handleDelete}
+              onRestart={this.handleRestart}
+            />
+          </main> */}
+        </div>
+      </>
     );
   }
 }

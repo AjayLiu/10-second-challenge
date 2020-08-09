@@ -1,5 +1,5 @@
 {
-  "name": "counter-app",
+  "name": "10-second-challenge",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -13,6 +13,7 @@
     "popper.js": "^1.15.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-helmet": "^6.1.0",
     "react-scripts": "2.1.8",
     "typescript": "^3.4.2"
   },
