@@ -55,3 +55,7 @@ button:hover {
   padding: 40px 0;
   font-size: 48px;
 }
+.endMessage {
+  margin-top: 50px;
+  height: 50px;
+}

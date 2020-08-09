@@ -40,6 +40,17 @@ class Stopwatch extends Component {
     let seconds = ("0" + (Math.floor(timerTime / 1000) % 60)).slice(-2);
     let minutes = ("0" + (Math.floor(timerTime / 60000) % 60)).slice(-2);
     // let hours = ("0" + Math.floor(timerTime / 3600000)).slice(-2);
+
+    let endMsg;
+    let secondsDiff = (10000 - timerTime) / 1000;
+    if (secondsDiff == 0) {
+      endMsg = "AMAZING! You nailed it!";
+    } else if (secondsDiff > 0) {
+      endMsg = "You were " + Math.abs(secondsDiff) + " seconds too early!";
+    } else {
+      endMsg = "You were " + Math.abs(secondsDiff) + " seconds too late!";
+    }
+
     return (
       <div className="Stopwatch">
         <div className="Stopwatch-header">10 Second Challenge</div>
@@ -64,7 +75,10 @@ class Stopwatch extends Component {
           <button onClick={this.startTimer}>Resume</button>
         )} */}
         {this.state.timerOn === false && this.state.timerTime > 0 && (
-          <button onClick={this.resetTimer}>Reset</button>
+          <React.Fragment>
+            <div className="endMessage">{endMsg}</div>
+            <button onClick={this.resetTimer}>Reset</button>
+          </React.Fragment>
         )}
       </div>
     );
