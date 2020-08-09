@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import NavBar from "./components/navbar";
-import Counters from "./components/counters";
+// import NavBar from "./components/navbar";
+// import Counters from "./components/counters";
 import Stopwatch from "./components/stopwatch";
 
 class App extends Component {

@@ -43,7 +43,7 @@ class Stopwatch extends Component {
 
     let endMsg;
     let secondsDiff = (10000 - timerTime) / 1000;
-    if (secondsDiff == 0) {
+    if (secondsDiff === 0) {
       endMsg = "AMAZING! You nailed it!";
     } else if (secondsDiff > 0) {
       endMsg = "You were " + Math.abs(secondsDiff) + " seconds too early!";
