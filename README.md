@@ -1,10 +1,10 @@
 ## About
 
-Built using React.
+My first projet built using React.
 
 ## Website
 
-https://10seconds.netlify.app/
+https://10seconds.ajayliu.com/
 
 ## Credit
 
